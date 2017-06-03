@@ -1,4 +1,7 @@
+const initial = require('./problems/initial');
+const arrays = require('./problems/arrays');
+
 module.exports = {
-  initial: require('./problems/initial'),
-  arrays: require('./problems/arrays')
+  initial: initial,
+  arrays: arrays
 };

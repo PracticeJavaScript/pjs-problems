@@ -43,5 +43,5 @@ module.exports = [
         test: `assert.lengthOf(output, 2) === undefined;`
       }
     ]
-  },
+  }
 ]
