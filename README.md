@@ -1,6 +1,20 @@
 # PJS-Problems
 Coding problem data for PracticeJavaScript.com
 
+## To add to your project
+```bash
+npm i --save pjs-problems
+```
+
+## To dev on it locally
+```bash
+git clone https://github.com/PracticeJavaScript/pjs-problems.git
+cd pjs-problems && npm i
+```
+
+We'll get some test framework in there soon to allow testing the
+problems outside of the client app
+
 ## Example
 ```js
 {
