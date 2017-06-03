@@ -1,8 +1,9 @@
 {
   "name": "pjs-problems",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Problems repo for practice-javascript",
   "main": "index.js",
+  "repository": "practicejavascript/pjs-problems",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
