@@ -9,7 +9,26 @@ module.exports = [
     tests: [
       {
         name: 'Correct output',
-        test: 'assert.deepEqual(output, \'apple\') === undefined'
+        test: `assert.deepEqual(output, 'apple') === undefined`
+      },
+      {
+        name: 'Returns a String',
+        test: 'assert.isString(output) === undefined'
+      }
+    ]
+  },
+  {
+    name: 'Access Array by index (first)',
+    time: 10,
+    prompt: 'Return the first value of the Array',
+    given: `const animals = ['chipmunk', 'chimpanzee'];
+           `,
+    answer: `const animals = ['chipmunk', 'chimpanzee'];
+             return animals[0];`,
+    tests: [
+      {
+        name: 'Correct output',
+        test: `assert.deepEqual(output, 'chipmunk') === undefined`
       },
       {
         name: 'Returns a String',
@@ -36,6 +55,25 @@ module.exports = [
     ]
   },
   {
+    name: 'Access Array by index (last)',
+    time: 10,
+    prompt: 'Return the last value of the Array',
+    given: `const animals = ['dog', 'hamster', 'lion'];
+           `,
+    answer: `const animals = ['dog', 'hamster', 'lion'];
+             return animals[animals.length - 1];`,
+    tests: [
+      {
+        name: 'Correct output',
+        test: `assert.deepEqual(output, 'lion') === undefined;`
+      },
+      {
+        name: 'Returns a String',
+        test: `assert.isString(output) === undefined;`
+      }
+    ]
+  },
+  {
     name: 'Access Array by index (second)',
     time: 10,
     prompt: 'Return the second value of the Array',
@@ -54,9 +92,28 @@ module.exports = [
     ]
   },
   {
+    name: 'Access Array by index (second)',
+    time: 10,
+    prompt: 'Return the second value of the Array',
+    given: `const animals = ['kitten', 'monkey'];
+           `,
+    answer: `const animals = ['kitten', 'monkey'];
+             return animals[1];`,
+    tests: [
+      {
+        name: 'Correct output',
+        test: `assert.deepEqual(output, 'monkey') === undefined;`
+      },
+      {
+        name: 'Returns a String',
+        test: `assert.isString(output) === undefined;`
+      }
+    ]
+  },
+  {
     name: 'Array.forEach()',
     time: 20,
-    prompt: 'Loop over the array, add an \'x\' to the end of each name, push each fruit into a new array, then return the new array.',
+    prompt: 'Iterate through the array, add an \'x\' to the end of each fruit, return the array.',
     given: `const fruits = ['apple', 'banana'];\r`,
     answer: `const fruits = ['apple', 'banana'];
              const newFruits = [];
@@ -68,6 +125,33 @@ module.exports = [
       {
         name: 'Correct output',
         test: `assert.deepEqual(output, ['applex', 'bananax']) === undefined;`
+      },
+      {
+        name: 'Returns an Array',
+        test: `assert.isArray(output) === undefined;`
+      },
+      {
+        name: 'Array has 2 items',
+        test: `assert.lengthOf(output, 2) === undefined;`
+      }
+    ]
+  },
+  {
+    name: 'Array.forEach()',
+    time: 20,
+    prompt: `Iterate through the array, add a 'ty' to the end of each animal, return the array.`,
+    given: `const animals = ['parrot', 'bat'];
+           `,
+    answer: `const animals = ['parrot', 'bat'];
+             const newAnimals = [];
+             animals.forEach(function(item) {
+               newAnimals.push(item+'ty');
+             });
+             return newAnimals;`,
+    tests: [
+      {
+        name: 'Correct output',
+        test: `assert.deepEqual(output, ['parrotty', 'batty']) === undefined;`
       },
       {
         name: 'Returns an Array',
@@ -103,6 +187,29 @@ module.exports = [
     ]
   },
   {
+    name: 'Array.push()',
+    time: 10,
+    prompt: `Add 'sloth' to the end of the 'animals' array and return 'animals'.`,
+    given: `const animals = ['crow', 'ox'];\r`,
+    answer: `const animals = ['crow', 'ox'];
+             animals.push('sloth');
+             return animals;`,
+    tests: [
+      {
+        name: 'Correct output',
+        test: `(assert.deepEqual(output, ['crow', 'ox', 'sloth]) === undefined);`
+      },
+      {
+        name: 'Returns an Array',
+        test: `assert.isArray(output) === undefined;`
+      },
+      {
+        name: 'Array has 3 items',
+        test: `assert.lengthOf(output, 3) === undefined;`
+      }
+    ]
+  },
+  {
     name: 'Array.shift()',
     time: 10,
     prompt: `Remove 'apple' from the front of the 'fruits' array and return 'fruits'.`,
@@ -114,6 +221,29 @@ module.exports = [
       {
         name: 'Output must be correct',
         test: `assert.deepEqual(output, ['banana', 'orange']) === undefined;`
+      },
+      {
+        name: 'Returns an Array',
+        test: `assert.isArray(output) === undefined;`
+      },
+      {
+        name: 'Array has 2 items',
+        test: `assert.lengthOf(output, 2) === undefined;`
+      }
+    ]
+  },
+  {
+    name: 'Array.shift()',
+    time: 10,
+    prompt: `Remove 'lemur' from the front of the 'animals' array and return 'animals'.`,
+    given: `const animals = ['lemur', 'crocodile', 'cat'];\r`,
+    answer: `const animals = ['lemur', 'crocodile', 'cat'];
+             animals.shift();
+             return animals;`,
+    tests: [
+      {
+        name: 'Output must be correct',
+        test: `assert.deepEqual(output, ['crocodile', 'cat']) === undefined;`
       },
       {
         name: 'Returns an Array',
@@ -154,12 +284,59 @@ module.exports = [
     ]
   },
   {
+    name: 'Array.unshift()',
+    time: 10,
+    prompt: `Add 'octopus' to the front of the 'animals' array and return 'animals'.`,
+    given: `const animals = ['pig', 'colt', 'antelope'];\r`,
+    answer: `const animals = ['pig', 'colt', 'antelope'];
+             animals.unshift('octopus');
+             return animals;`,
+    tests: [
+      {
+        name: 'Output must be correct',
+        test: `(assert.deepEqual(output, [
+                  'octopus',
+                  'pig',
+                  'colt',
+                  'antelope'
+                ]) === undefined)`
+      },
+      {
+        name: 'Must return an Array',
+        test: `assert.isArray(output) === undefined;`
+      },
+      {
+        name: 'Array has 4 items',
+        test: `assert.lengthOf(output, 4) === undefined;`
+      }
+    ]
+  },
+  {
     name: 'Array.indexOf()',
     time: 10,
     prompt: `Return the index of 'banana' in the Array.`,
     given: `const fruits = ['strawberry', 'banana', 'mango'];\r`,
     answer: `const fruits = ['strawberry', 'banana', 'mango'];
              const ind = fruits.indexOf('banana');
+             return ind;`,
+    tests: [
+      {
+        name: 'Correct output',
+        test: `assert.deepEqual(output, 1) === undefined;`
+      },
+      {
+        name: 'Returns a Number',
+        test: `assert.isNumber(output) === undefined;`
+      }
+    ]
+  },
+  {
+    name: 'Array.indexOf()',
+    time: 10,
+    prompt: `Return the index of 'fox' in the Array.`,
+    given: `const animals = ['kangaroo', 'fox', 'bison'];\r`,
+    answer: `const animals = ['kangaroo', 'fox', 'bison'];
+             const ind = animals.indexOf('fox');
              return ind;`,
     tests: [
       {
@@ -203,6 +380,38 @@ module.exports = [
     ]
   },
   {
+    name: 'Array.concat()',
+    time: 10,
+    prompt: `Merge the two arrays using Array's 'concat()' method. Return the resulting array.`,
+    given: `const adjectives = ['giant', 'chunky'];
+            const verbs = ['turn','whisper'];
+            `,
+    answer: `const adjectives = ['giant', 'chunky'];
+             const verbs = ['turn','whisper'];
+             const words = adjectives.concat(verbs);
+             return words;`,
+    tests: [
+      {
+        name: 'Correct output',
+        test: `(assert.deepEqual(output, [
+                  'giant',
+                  'chunky',
+                  'turn',
+                  'whisper'
+                ]) === undefined
+              );`
+      },
+      {
+        name: 'Returns an Array',
+        test: `assert.isArray(output) === undefined;`
+      },
+      {
+        name: 'Array has 4 items',
+        test: `assert.lengthOf(output, 4) === undefined;`
+      }
+    ]
+  },
+  {
     name: 'Array.join()',
     time: 10,
     prompt: `Mix the two flavors with a '-' using Array's 'join' method. Return the resulting hybrid flavor.`,
@@ -222,6 +431,25 @@ module.exports = [
     ]
   },
   {
+    name: 'Array.join()',
+    time: 10,
+    prompt: `Mix the two animals with a '-' using Array's 'join' method. Return the resulting hybrid animal.`,
+    given: `const animals = ['alligator', 'deer'];\r`,
+    answer: `const animals = ['alligator', 'deer'];
+             const hybrid = animals.join('-');
+             return hybrid;\r`,
+    tests: [
+      {
+        name: 'Correct output',
+        test: `assert.deepEqual(output, 'alligator-deer') === undefined;`
+      },
+      {
+        name: 'Returns a String',
+        test: `assert.isString(output) === undefined;`
+      }
+    ]
+  },
+  {
     name: 'Array.slice()',
     time: 20,
     prompt: `Return just the citrus fruits from the 'fruits' array using 'Array.slice()'`,
@@ -233,6 +461,30 @@ module.exports = [
       {
         name: 'Correct output',
         test: `assert.deepEqual(output, ['orange', 'lemon']) === undefined;`
+      },
+      {
+        name: 'Returns an Array',
+        test: `assert.isArray(output) === undefined;`
+      },
+      {
+        name: 'Array has 2 items',
+        test: `assert.lengthOf(output, 2) === undefined;`
+      }
+    ]
+  },
+  {
+    name: 'Array.slice()',
+    time: 20,
+    prompt: `Return just the birds from the 'animals' array using 'Array.slice()'`,
+    given: `const animals = ['hyena', 'koala', 'parrot', 'canary'];
+           `,
+    answer: `const animals = ['hyena', 'koala', 'parrot', 'canary'];
+             const birds = animals.slice(2, 4);
+             return birds;`,
+    tests: [
+      {
+        name: 'Correct output',
+        test: `assert.deepEqual(output, ['parrot', 'canary']) === undefined;`
       },
       {
         name: 'Returns an Array',
@@ -273,6 +525,37 @@ module.exports = [
       {
         name: `First item is 'banana'`,
         test: `assert.deepEqual(output[0], 'banana') === undefined;`
+      }
+    ]
+  },
+  {
+    name: 'Array.reverse()',
+    time: 10,
+    prompt: `Reverse the order of the 'animals' array using 'Array.reverse()'`,
+    given: `const animals = ['mongoose', 'warthog', 'elk', 'baboon'];\r`,
+    answer: `const animals = ['mongoose', 'warthog', 'elk', 'baboon'];
+             return animals.reverse();`,
+    tests: [
+      {
+        name: 'Correct output',
+        test: `(assert.deepEqual(output, [
+                  'baboon',
+                  'elk',
+                  'warthog',
+                  'mongoose'
+                ]) === undefined);`
+      },
+      {
+        name: 'Returns an Array',
+        test: `assert.isArray(output) === undefined;`
+      },
+      {
+        name: 'Array has 4 items',
+        test: `assert.lengthOf(output, 4) === undefined;`
+      },
+      {
+        name: `First item is 'baboon'`,
+        test: `assert.deepEqual(output[0], 'baboon') === undefined;`
       }
     ]
   },
@@ -392,7 +675,7 @@ module.exports = [
     given: `const evenNumbers = [2, 4, 6, 8];
             const someOddNumbers = [2, 5, 6, 8];
             function isEven(element) {
-            
+
             }
             return {
               evenNumbers: evenNumbers.,
@@ -440,7 +723,7 @@ module.exports = [
     given: `const evenNumbers = [2, 4, 6, 8];
             const someOddNumbers = [2, 4, 7, 8];
             function isOdd(element) {
-              
+
             }
             return {
               evenNumbers: evenNumbers.,
