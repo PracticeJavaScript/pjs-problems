@@ -197,7 +197,7 @@ module.exports = [
     tests: [
       {
         name: 'Correct output',
-        test: `(assert.deepEqual(output, ['crow', 'ox', 'sloth]) === undefined);`
+        test: `(assert.deepEqual(output, ['crow', 'ox', 'sloth']) === undefined);`
       },
       {
         name: 'Returns an Array',
@@ -592,6 +592,37 @@ module.exports = [
     ]
   },
   {
+    name: 'Array.sort()',
+    time: 10,
+    prompt: `Return the 'animals' Array after sorting them using 'Array.sort()'.`,
+    given: `const animals = ['pig', 'duck', 'sheep', 'cow'];\r`,
+    answer: `const animals = ['pig', 'duck', 'sheep', 'cow'];
+             return animals.sort();`,
+    tests: [
+      {
+        name: 'Correct output',
+        test: `(assert.deepEqual(output, [
+                  'cow',
+                  'duck',
+                  'pig',
+                  'sheep'
+                ]) === undefined);`
+      },
+      {
+        name: 'Returns an Array',
+        test: `assert.isArray(output) === undefined;`
+      },
+      {
+        name: 'Array has 4 items',
+        test: `assert.lengthOf(output, 4) === undefined;`
+      },
+      {
+        name: `First item is 'cow'`,
+        test: `assert.deepEqual(output[0], 'cow') === undefined;`
+      }
+    ]
+  },
+  {
     name: 'Array.lastIndexOf()',
     time: 10,
     prompt: `Return the index of the last 'peach' instance in the 'fruit' array using 'Array.lastIndexOf()'`,
@@ -603,6 +634,24 @@ module.exports = [
       {
         name: 'Correct output',
         test: `assert.deepEqual(output, 3) === undefined;`
+      },
+      {
+        name: 'Returns a Number',
+        test: `assert.isNumber(output) === undefined;`
+      }
+    ]
+  },
+  {
+    name: 'Array.lastIndexOf()',
+    time: 10,
+    prompt: `Return the index of the last 'lynx' instance in the 'animals' array using 'Array.lastIndexOf()'`,
+    given: `const animals = ['lynx', 'rabbit', 'lynx', 'wombat'];\r`,
+    answer: `const animals = ['lynx', 'rabbit', 'lynx', 'wombat'];
+             return animals.lastIndexOf('lynx');`,
+    tests: [
+      {
+        name: 'Correct output',
+        test: `assert.deepEqual(output, 2) === undefined;`
       },
       {
         name: 'Returns a Number',
@@ -638,6 +687,33 @@ module.exports = [
     ]
   },
   {
+    name: 'Array.filter()',
+    time: 10,
+    prompt: `Return an array of the numbers less than 12 or greater than 20 in 'numbers' using 'Array.filter()'`,
+    given: `const numbers = [12, 10, 20, 3, 15, 8, 130, 25];
+           `,
+    answer: `const numbers = [12, 10, 20, 3, 15, 8, 130, 25];
+             return numbers.filter(num => (num < 12 || num > 20));`,
+    tests: [
+      {
+        name: 'Correct output',
+        test: `assert.deepEqual(output, [ 10, 3, 8, 130, 25 ]) === undefined;`
+      },
+      {
+        name: 'Returns an Array',
+        test: `assert.isArray(output) === undefined;`
+      },
+      {
+        name: 'Array has 3 items',
+        test: `assert.lengthOf(output, 5) === undefined;`
+      },
+      {
+        name: `First item is 8`,
+        test: `assert.deepEqual(output[0], 10) === undefined;`
+      }
+    ]
+  },
+  {
     name: 'Array.map()',
     time: 10,
     prompt: `Return an array of 'numbers' array's square roots, using 'Array.map()' and 'Math.sqrt()'`,
@@ -669,12 +745,43 @@ module.exports = [
     ]
   },
   {
+    name: 'Array.map()',
+    time: 10,
+    prompt: `Return an array of 'numbers' array's numbers squared using 'Array.map()'`,
+    given: `const numbers = [8, 21, 32, 11];
+           `,
+    answer: `const numbers = [8, 21, 32, 11];
+             return numbers.map(num => num * num));`,
+    tests: [
+      {
+        name: 'Correct output',
+        test: `assert.deepEqual(output, [64, 441, 1024, 121]) === undefined;`
+      },
+      {
+        name: 'Returns an Array',
+        test: `assert.isArray(output) === undefined;`
+      },
+      {
+        name: 'Array has 4 items',
+        test: `assert.lengthOf(output, 4) === undefined;`
+      },
+      {
+        name: `First item is 64`,
+        test: `assert.deepEqual(output[0], 64) === undefined;`
+      },
+      {
+        name: `Last item is 121`,
+        test: `assert.deepEqual(output[output.length - 1], 121) === undefined;`
+      }
+    ]
+  },
+  {
     name: 'Array.every()',
     time: 10,
     prompt: `Return object that returns whether each array contains all even numbers using Array.every().`,
     given: `const evenNumbers = [2, 4, 6, 8];
             const someOddNumbers = [2, 5, 6, 8];
-            function isEven(element) {
+            function isEven(num) {
 
             }
             return {
@@ -683,8 +790,8 @@ module.exports = [
             };`,
     answer: `const evenNumbers = [2, 4, 6, 8];
              const someOddNumbers = [2, 5, 6, 8];
-             function isEven(element) {
-               return element % 2 === 0
+             function isEven(num) {
+               return num % 2 === 0
              }
              return {
                evenNumbers: evenNumbers.every(isEven),
@@ -722,7 +829,7 @@ module.exports = [
     prompt: `Return 'Object' that returns whether each array contains some odd numbers using 'Array.some()'.`,
     given: `const evenNumbers = [2, 4, 6, 8];
             const someOddNumbers = [2, 4, 7, 8];
-            function isOdd(element) {
+            function isOdd(num) {
 
             }
             return {
@@ -731,8 +838,8 @@ module.exports = [
             };`,
     answer: `const evenNumbers = [1, 3, 5, 7];
              const someOddNumbers = [1, 3, 6, 7];
-             function isOdd(element) {
-               return element % 2 !== 0;
+             function isOdd(num) {
+               return num % 2 !== 0;
              }
              return {
                evenNumbers: evenNumbers.some(isOdd),
@@ -763,10 +870,84 @@ module.exports = [
         test: `assert.isTrue(output.someOddNumbers) === undefined;`
       }
     ]
-  }
+  },
+  {
+    name: 'Array.reduce()',
+    time: 10,
+    prompt: `Return the sum of the values in the 'numbers' array using 'Array.reduce()'`,
+    given: `const numbers = [34, 12, 47, 112];
+           `,
+    answer: `const numbers = [34, 12, 47, 112];
+             return numbers.reduce((accumulator, currentValue) => {
+               return accumulator + currentValue;
+             } 0);`,
+    tests: [
+      {
+        name: 'Correct output',
+        test: `assert.deepEqual(output, 205) === undefined;`
+      },
+      {
+        name: 'Returns a Number',
+        test: `assert.isNumber(output) === undefined;`
+      }
+    ]
+  },
+  {
+    name: 'Array.reduce() and Array.concat()',
+    time: 40,
+    prompt: `Return a flattened array using 'Array.reduce() and Array.concat()'`,
+    given: `const numbers = [[51, 2], [23, 5, 6], 78];
+           `,
+    answer: `const numbers = [[51, 2], [23, 5, 6], 78];
+             const flatten = arr => arr.reduce(
+               (acc, val) => acc.concat(
+                 Array.isArray(val) ? flatten(val) : val
+               ),
+               []
+             );
+             return flatten(numbers)`,
+    tests: [
+      {
+        name: 'Correct output',
+        test: `assert.deepEqual(output, [ 51, 2, 23, 5, 6, 78 ]) === undefined;`
+      },
+      {
+        name: 'Returns an Array',
+        test: `assert.isArray(output) === undefined;`
+      },{
+        name: 'Array has 6 items',
+        test: `assert.lengthOf(output, 6) === undefined;`
+      },
+      {
+        name: `First item is 51`,
+        test: `assert.deepEqual(output[0], 51) === undefined;`
+      },
+      {
+        name: `Last item is 78`,
+        test: `assert.deepEqual(output[output.length - 1], 78) === undefined;`
+      }
+    ]
+  },
+  {
+    name: 'Array.reduce() and Math.max()',
+    time: 40,
+    prompt: `Return the highest number in the array using Array.reduce() and Math.max()'`,
+    given: `const numbers = [4, 12, 3, 15, 7];
+           `,
+    answer: `const numbers = [4, 12, 3, 15, 7];
+             return numbers.reduce((max, current) => Math.max( max, current ));`,
+    tests: [
+      {
+        name: 'Correct output',
+        test: `assert.deepEqual(output, 15) === undefined;`
+      },
+      {
+        name: 'Returns a Number',
+        test: `assert.isNumber(output) === undefined;`
+      }
+    ]
+  },
   // Next problems to create:
-  // forEach? fix one above that tried, but can't verify forEach was used
-  // some
   // reduce
   // reduceRight
   // Array.from and other ways to turn array-like into array
