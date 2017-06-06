@@ -1,22 +1,12 @@
-// deps
 const gulp = require('gulp');
 const babel = require('gulp-babel');
 
-// config
-const src = './problems/**/*.js';
-const dest = './es5/problems'
+const src = './problems/*.js';
+const dist = './problems'
 
+// re-format template strings, spacing, and save in place
 gulp.task('es5', () => {
-  return gulp.src(src)
+  gulp.src(src)
     .pipe(babel())
-    .pipe(gulp.dest(dest));
-})
-
-gulp.task('watch', ['es5'], () => {
-  gulp.watch(src, ['es5'])
-    .on('change', e => {
-      console.log(`File ${e.path} was ${e.type}, running ES5 task...`)
-    })
+    .pipe(gulp.dest(dist));
 });
-
-gulp.task('default', ['es5']);
