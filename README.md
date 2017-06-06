@@ -7,10 +7,15 @@ npm i --save pjs-problems
 ```
 
 ## With ES6 template strings
-`require('pjs-problems').default`
+```js
+require('pjs-problems').default;
+```
+
 
 ## With ES5-compatible strings
-`require('pjs-problems').es5`
+```js
+require('pjs-problems').es5;
+```
 
 ## To dev on it locally
 ```bash
