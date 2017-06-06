@@ -1,6 +1,6 @@
 {
   "name": "pjs-problems",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "Problems repo for practice-javascript",
   "main": "index.js",
   "repository": "practicejavascript/pjs-problems",
