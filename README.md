@@ -17,6 +17,8 @@ git clone https://github.com/PracticeJavaScript/pjs-problems.git
 cd pjs-problems && npm i
 ```
 
+## Note
+It reformats es6 template literals to normal nasty string concat on `git push` or `gulp es5`, for compatibility reasons. Test your problems using npm link, and the reformatting shouldn't harm the functionality, it'll just make it look super-ugg.
 
 We'll get some test framework in there soon to allow testing the
 problems outside of the client app

@@ -589,10 +589,8 @@ module.exports = [{
   name: 'Array.reduce() and Math.max()',
   time: 40,
   prompt: 'Return the highest number in the array using Array.reduce() and Math.max()\'',
-  given: `const numbers = [4, 12, 3, 15, 7];
-         `,
-  answer: `const numbers = [4, 12, 3, 15, 7];
-           return numbers.reduce((max, current) => Math.max( max, current ));`,
+  given: 'const numbers = [4, 12, 3, 15, 7];',
+  answer: 'const numbers = [4, 12, 3, 15, 7];\n           return numbers.reduce((max, current) => Math.max( max, current ));',
   tests: [{
     name: 'Correct output',
     test: 'assert.deepEqual(output, 15) === undefined;'
