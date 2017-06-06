@@ -6,11 +6,21 @@ Coding problem data for PracticeJavaScript.com
 npm i --save pjs-problems
 ```
 
+## With ES6 template strings
+`require('pjs-problems').default`
+
+## With ES5-compatible strings
+`require('pjs-problems').es5`
+
 ## To dev on it locally
 ```bash
 git clone https://github.com/PracticeJavaScript/pjs-problems.git
 cd pjs-problems && npm i
+npm run watch
 ```
+
+It automatically creates an ES5-compatible output in /es5/problems, which are exported and available at
+'require('pjs-problems').es5`
 
 We'll get some test framework in there soon to allow testing the
 problems outside of the client app

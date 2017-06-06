@@ -1,7 +1,16 @@
-var initial = require('./problems/initial');
-var arrays = require('./problems/arrays');
+// default
+const normal = {
+  initial: require('./problems/initial'),
+  arrays: require('./problems/arrays')
+};
+
+// es5
+const es5 = {
+  initialES5: require('./es5/problems/initial'),
+  arraysES5: require('./es5/problems/arrays')
+};
 
 module.exports = {
-  initial: initial,
-  arrays: arrays
+  default: normal,
+  es5: es5
 };

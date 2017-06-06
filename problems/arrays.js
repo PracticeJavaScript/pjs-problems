@@ -948,7 +948,29 @@ module.exports = [
     ]
   },
   // Next problems to create:
-  // reduce
   // reduceRight
-  // Array.from and other ways to turn array-like into array
+  // splice 1, 2 items, shallow copy array
+  // get array's length
+  // push several items
+  // decrease length to truncate array, deleting elements
+  // .from()
+  // .isArray()
+  // .of()
+  // .copyWithin()
+  // .fill()
+  // .sort() with a compare function
+  // .inlcludes()
+  // .toString()
+  // .entries()
+  // more .filter() problems
+  // .find()
+  // .findIndex()
+  // .keys()
+  // .values()
+  // .map and template literals to return fullnames from first, last fields in object array
+  // .sort() by a sub-field of objects in array, like birth years
+  // .reduce() to know total dollar amount of week's spending
+  // .sort() employees by how long they've been with the company
+  // .reduce() sum the number of instances of each item in a repetitive array of words
+  // 
 ];
