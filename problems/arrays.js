@@ -602,7 +602,8 @@ module.exports = [{
   name: 'Array.reduceRight()',
   time: 30,
   prompt: 'Flatten an array of arrays from right to left, using Array.reduceRight()',
-  given: 'const numbers = [[0, 1], [2, 3], [4, 5]];',
+  given: `const numbers = [[0, 1], [2, 3], [4, 5]];
+          `,
   answer: `const numbers = [[0, 1], [2, 3], [4, 5]];
            return numbers.reduceRight((prev, curr) => prev.concat(curr));`,
   tests: [{
@@ -620,6 +621,34 @@ module.exports = [{
   }, {
     name: 'Last item is 1',
     test: 'assert.deepEqual(output[output.length - 1], 1) === undefined;'
+  }]
+}, {
+  name: 'Array.splice() remove 0, insert 1',
+  time: 30,
+  prompt: `Splice \'bunny\' between his new friends 'dingo' and 'panther' using Array.splice(), then return \'animals\'`,
+  given: `const animals = ['eagle', 'dingo', 'panther', 'lion'];
+          `,
+  answer: `const animals = ['eagle', 'dingo', 'panther', 'lion'];
+           animals.splice(2, 0, 'bunny');
+           return animals;`,
+  tests: [{
+    name: 'Correct output',
+    test: `assert.deepEqual(output, ['eagle', 'dingo', 'bunny', 'panther', 'lion']) === undefined;`
+  }, {
+    name: 'Returns an Array',
+    test: 'assert.isArray(output) === undefined;'
+  }, {
+    name: 'Array has 5 items',
+    test: 'assert.lengthOf(output, 5) === undefined;'
+  }, {
+    name: `First item is 'eagle'`,
+    test:  `assert.deepEqual(output[0], 'eagle') === undefined;`
+  }, {
+    name: `Third item is 'bunny'`,
+    test:  `assert.deepEqual(output[2], 'bunny') === undefined;`
+  }, {
+    name: `Last item is 'lion'`,
+    test: `assert.deepEqual(output[output.length - 1], 'lion') === undefined;`
   }]
 }
 ];
