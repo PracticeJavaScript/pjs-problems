@@ -588,7 +588,7 @@ module.exports = [{
 }, {
   name: 'Array.reduce() and Math.max()',
   time: 40,
-  prompt: 'Return the highest number in the array using Array.reduce() and Math.max()\'',
+  prompt: 'Return the highest number in the array using Array.reduce() and Math.max()',
   given: 'const numbers = [4, 12, 3, 15, 7];',
   answer: 'const numbers = [4, 12, 3, 15, 7];\n           return numbers.reduce((max, current) => Math.max( max, current ));',
   tests: [{
@@ -598,4 +598,115 @@ module.exports = [{
     name: 'Returns a Number',
     test: 'assert.isNumber(output) === undefined;'
   }]
-}];
+}, {
+  name: 'Array.reduceRight()',
+  time: 30,
+  prompt: 'Flatten an array of arrays from right to left, using Array.reduceRight()',
+  given: `const numbers = [[0, 1], [2, 3], [4, 5]];
+          `,
+  answer: `const numbers = [[0, 1], [2, 3], [4, 5]];
+           return numbers.reduceRight((prev, curr) => prev.concat(curr));`,
+  tests: [{
+    name: 'Correct output',
+    test: 'assert.deepEqual(output, [4, 5, 2, 3, 0, 1]) === undefined;'
+  }, {
+    name: 'Returns an Array',
+    test: 'assert.isArray(output) === undefined;'
+  }, {
+    name: 'Array has 6 items',
+    test: 'assert.lengthOf(output, 6) === undefined;'
+  }, {
+    name: 'First item is 4',
+    test: 'assert.deepEqual(output[0], 4) === undefined;'
+  }, {
+    name: 'Last item is 1',
+    test: 'assert.deepEqual(output[output.length - 1], 1) === undefined;'
+  }]
+}, {
+  name: 'Array.splice() remove 0, insert 1',
+  time: 30,
+  prompt: `Splice 'bunny' between his new friends 'dingo' and 'panther' using Array.splice(), then return 'animals'`,
+  given: `const animals = ['eagle', 'dingo', 'panther', 'lion'];
+          `,
+  answer: `const animals = ['eagle', 'dingo', 'panther', 'lion'];
+           animals.splice(2, 0, 'bunny');
+           return animals;`,
+  tests: [{
+    name: 'Correct output',
+    test: `assert.deepEqual(output, ['eagle', 'dingo', 'bunny', 'panther', 'lion']) === undefined;`
+  }, {
+    name: 'Returns an Array',
+    test: 'assert.isArray(output) === undefined;'
+  }, {
+    name: 'Array has 5 items',
+    test: 'assert.lengthOf(output, 5) === undefined;'
+  }, {
+    name: `First item is 'eagle'`,
+    test:  `assert.deepEqual(output[0], 'eagle') === undefined;`
+  }, {
+    name: `Third item is 'bunny'`,
+    test:  `assert.deepEqual(output[2], 'bunny') === undefined;`
+  }, {
+    name: `Last item is 'lion'`,
+    test: `assert.deepEqual(output[output.length - 1], 'lion') === undefined;`
+  }]
+}, {
+  name: 'Array.splice() remove 1, insert 0',
+  time: 30,
+  prompt: `Rescue 'bunny' away from his new friends 'dingo' and 'panther' using Array.splice(), then return 'animals'`,
+  given: `const animals = ['eagle', 'dingo', 'bunny', 'panther', 'lion'];
+          `,
+  answer: `const animals = ['eagle', 'dingo', 'bunny', 'panther', 'lion'];
+           animals.splice(2, 1);
+           return animals;`,
+  tests: [{
+    name: 'Correct output',
+    test: `assert.deepEqual(output, ['eagle', 'dingo', 'panther', 'lion']) === undefined;`
+  }, {
+    name: 'Returns an Array',
+    test: 'assert.isArray(output) === undefined;'
+  }, {
+    name: 'Array has 4 items',
+    test: 'assert.lengthOf(output, 4) === undefined;'
+  }, {
+    name: `First item is 'eagle'`,
+    test:  `assert.deepEqual(output[0], 'eagle') === undefined;`
+  }, {
+    name: `Third item is 'panther'`,
+    test:  `assert.deepEqual(output[2], 'panther') === undefined;`
+  }, {
+    name: `Last item is 'lion'`,
+    test: `assert.deepEqual(output[output.length - 1], 'lion') === undefined;`
+  },
+  {
+    name: `Bunny isn't in array`,
+    test: `assert.equal(output.indexOf('bunny'), -1) === undefined;`
+  }
+  ]
+}
+];
+
+// Next problems to create:
+// splice 1, 2 items, shallow copy array
+// get array's length
+// push several items
+// decrease length to truncate array, deleting elements
+// .from()
+// .isArray()
+// .of()
+// .copyWithin()
+// .fill()
+// .sort() with a compare function
+// .inlcludes()
+// .toString()
+// .entries()
+// more .filter() problems
+// .find()
+// .findIndex()
+// .keys()
+// .values()
+// .map and template literals to return fullnames from first, last fields in object array
+// .sort() by a sub-field of objects in array, like birth years
+// .reduce() to know total dollar amount of week's spending
+// .sort() employees by how long they've been with the company
+// .reduce() sum the number of instances of each item in a repetitive array of words
