@@ -625,7 +625,7 @@ module.exports = [{
 }, {
   name: 'Array.splice() remove 0, insert 1',
   time: 30,
-  prompt: `Splice \'bunny\' between his new friends 'dingo' and 'panther' using Array.splice(), then return \'animals\'`,
+  prompt: `Splice 'bunny' between his new friends 'dingo' and 'panther' using Array.splice(), then return 'animals'`,
   given: `const animals = ['eagle', 'dingo', 'panther', 'lion'];
           `,
   answer: `const animals = ['eagle', 'dingo', 'panther', 'lion'];
@@ -650,6 +650,39 @@ module.exports = [{
     name: `Last item is 'lion'`,
     test: `assert.deepEqual(output[output.length - 1], 'lion') === undefined;`
   }]
+}, {
+  name: 'Array.splice() remove 1, insert 0',
+  time: 30,
+  prompt: `Rescue 'bunny' away from his new friends 'dingo' and 'panther' using Array.splice(), then return 'animals'`,
+  given: `const animals = ['eagle', 'dingo', 'bunny', 'panther', 'lion'];
+          `,
+  answer: `const animals = ['eagle', 'dingo', 'bunny', 'panther', 'lion'];
+           animals.splice(2, 1);
+           return animals;`,
+  tests: [{
+    name: 'Correct output',
+    test: `assert.deepEqual(output, ['eagle', 'dingo', 'panther', 'lion']) === undefined;`
+  }, {
+    name: 'Returns an Array',
+    test: 'assert.isArray(output) === undefined;'
+  }, {
+    name: 'Array has 4 items',
+    test: 'assert.lengthOf(output, 4) === undefined;'
+  }, {
+    name: `First item is 'eagle'`,
+    test:  `assert.deepEqual(output[0], 'eagle') === undefined;`
+  }, {
+    name: `Third item is 'panther'`,
+    test:  `assert.deepEqual(output[2], 'panther') === undefined;`
+  }, {
+    name: `Last item is 'lion'`,
+    test: `assert.deepEqual(output[output.length - 1], 'lion') === undefined;`
+  },
+  {
+    name: `Bunny isn't in array`,
+    test: `assert.equal(output.indexOf('bunny'), -1) === undefined;`
+  }
+  ]
 }
 ];
 
