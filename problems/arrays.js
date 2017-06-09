@@ -649,8 +649,36 @@ module.exports = [{
   name: 'Array.splice() remove 1, insert 0',
   time: 30,
   prompt: 'Rescue \'bunny\' away from his new friends \'dingo\' and \'panther\' using Array.splice(), then return \'animals\'',
-  given: 'const animals = [\'eagle\', \'dingo\', \'bunny\', \'panther\', \'lion\'];\n          ',
+  given: 'const animals = [\'eagle\', \'dingo\', \'bunny\', \'panther\', \'lion\'];\n\n          return animals',
   answer: 'const animals = [\'eagle\', \'dingo\', \'bunny\', \'panther\', \'lion\'];\n           animals.splice(2, 1);\n           return animals;',
+  tests: [{
+    name: 'Correct output',
+    test: 'assert.deepEqual(output, [\'eagle\', \'dingo\', \'panther\', \'lion\']) === undefined;'
+  }, {
+    name: 'Returns an Array',
+    test: 'assert.isArray(output) === undefined;'
+  }, {
+    name: 'Array has 4 items',
+    test: 'assert.lengthOf(output, 4) === undefined;'
+  }, {
+    name: 'First item is \'eagle\'',
+    test: 'assert.deepEqual(output[0], \'eagle\') === undefined;'
+  }, {
+    name: 'Third item is \'panther\'',
+    test: 'assert.deepEqual(output[2], \'panther\') === undefined;'
+  }, {
+    name: 'Last item is \'lion\'',
+    test: 'assert.equal(output[output.length-1], "lion") === undefined;'
+  }, {
+    name: 'Bunny isn\'t in array',
+    test: 'assert.notInclude(output, "bunny") === undefined;'
+  }]
+}, {
+  name: 'Array.splice() remove 2',
+  time: 30,
+  prompt: 'Rescue \'gerbil\' and \'bunny\' from \'animals\' using Array.splice(), then return \'animals\'',
+  given: 'const animals = ["eagle", "dingo", "bunny", "gerbil", "panther", "lion"];\n\n          return animals;',
+  answer: 'const animals = ["eagle", "dingo", "bunny", "gerbil", "panther", "lion"];\n           animals.splice(2,2);\n           return animals;',
   tests: [{
     name: 'Correct output',
     test: 'assert.deepEqual(output, [\'eagle\', \'dingo\', \'panther\', \'lion\']) === undefined;'
@@ -670,13 +698,130 @@ module.exports = [{
     name: 'Last item is \'lion\'',
     test: 'assert.deepEqual(output[output.length - 1], \'lion\') === undefined;'
   }, {
-    name: 'Bunny isn\'t in array',
-    test: 'assert.equal(output.indexOf(\'bunny\'), -1) === undefined;'
+    name: '\'bunny\' isn\'t in array',
+    test: 'assert.notInclude(output, "bunny") === undefined;'
+  }, {
+    name: '\'gerbil\' isn\'t in array',
+    test: 'assert.notInclude(output, "gerbil") === undefined;'
+  }]
+}, {
+  name: 'Array.splice() remove 2, add 2',
+  time: 30,
+  prompt: 'Remove the boring \'alpaca\' and \'bunny\' from \'carnivores\' and add \'t-rex\' and \'velociraptor\' the the beginning of the array using one Array.splice(), then return \'carnivores\' so they can have an awesome carnivore-party',
+  given: 'const carnivores = [ \'alpaca\', \'bunny\', \'alligator\', \'wolverine\'];\n          const dinos = [\'t-rex\', \'velociraptor\'];\n\n          return carnivores;',
+  answer: 'const carnivores = [ \'alpaca\', \'bunny\', \'alligator\', \'wolverine\'];\n           const dinos = [\'t-rex\', \'velociraptor\'];\n           carnivores.splice(0, 2, ...dinos);\n           return carnivores;',
+  tests: [{
+    name: 'Correct output',
+    test: 'assert.deepEqual(output, ["t-rex", "velociraptor", "alligator", "wolverine"]) === undefined;'
+  }, {
+    name: 'Returns an Array',
+    test: 'assert.isArray(output) === undefined;'
+  }, {
+    name: 'Array has 4 items',
+    test: 'assert.lengthOf(output, 4) === undefined;'
+  }, {
+    name: 'First item is \'t-rex\'',
+    test: 'assert.deepEqual(output[0], \'t-rex\') === undefined;'
+  }, {
+    name: 'Third item is \'alligator\'',
+    test: 'assert.deepEqual(output[2], \'alligator\') === undefined;'
+  }, {
+    name: 'Last item is \'wolverine\'',
+    test: 'assert.deepEqual(output[output.length - 1], \'wolverine\') === undefined;'
+  }, {
+    name: '\'bunny\' isn\'t in array',
+    test: 'assert.notInclude(output, "bunny") === undefined;'
+  }, {
+    name: '\'alpaca\' isn\'t in array',
+    test: 'assert.notInclude(output, "alpaca") === undefined;'
+  }]
+}, {
+  name: 'Array.splice() remove last 2',
+  time: 30,
+  prompt: 'Remove the last two items from \'countries\' using \'Array.splice()\', then return \'countries\'',
+  given: 'const countries = [\'Maldives\',\'New Zealand\',\'Austria\',\'Palau\'];\n\n          return countries;',
+  answer: 'const countries = [\'Maldives\',\'New Zealand\',\'Austria\',\'Palau\'];\n           countries.splice(-2);\n           return countries;',
+  tests: [{
+    name: 'Correct output',
+    test: 'assert.deepEqual(output, ["Maldives", "New Zealand"]) === undefined;'
+  }, {
+    name: 'Returns an Array',
+    test: 'assert.isArray(output) === undefined;'
+  }, {
+    name: 'Array has 2 items',
+    test: 'assert.lengthOf(output, 2) === undefined;'
+  }, {
+    name: 'First item is \'Maldives\'',
+    test: 'assert.deepEqual(output[0], \'Maldives\') === undefined;'
+  }, {
+    name: 'Last item is \'New Zealand\'',
+    test: 'assert.deepEqual(output[output.length - 1], \'New Zealand\') === undefined;'
+  }, {
+    name: '\'Austria\' isn\'t in array',
+    test: 'assert.notInclude(output, "Austria") === undefined;'
+  }, {
+    name: '\'Palau\' isn\'t in array',
+    test: 'assert.notInclude(output, "Palau") === undefined;'
+  }]
+}, {
+  name: 'Array.splice() remove all after index',
+  time: 30,
+  prompt: 'Remove all items after index \'2\' from \'countries\' using \'Array.splice()\', then return \'countries\'',
+  given: 'const countries = [\'Maldives\',\'New Zealand\',\'Austria\',\'Palau\',\'Netherlands\',\'Sweden\'];\n\n          return countries;',
+  answer: 'const countries = [\'Maldives\',\'New Zealand\',\'Austria\',\'Palau\',\'Netherlands\',\'Sweden\'];\n           countries.splice(2);\n           return countries;',
+  tests: [{
+    name: 'Correct output',
+    test: 'assert.deepEqual(output, ["Maldives", "New Zealand"]) === undefined;'
+  }, {
+    name: 'Returns an Array',
+    test: 'assert.isArray(output) === undefined;'
+  }, {
+    name: 'Array has 2 items',
+    test: 'assert.lengthOf(output, 2) === undefined;'
+  }, {
+    name: 'First item is \'Maldives\'',
+    test: 'assert.deepEqual(output[0], \'Maldives\') === undefined;'
+  }, {
+    name: 'Last item is \'New Zealand\'',
+    test: 'assert.deepEqual(output[output.length - 1], \'New Zealand\') === undefined;'
+  }, {
+    name: '\'Austria\' isn\'t in array',
+    test: 'assert.notInclude(output, "Austria") === undefined;'
+  }, {
+    name: '\'Palau\' isn\'t in array',
+    test: 'assert.notInclude(output, "Palau") === undefined;'
+  }, {
+    name: '\'Netherlands\' isn\'t in array',
+    test: 'assert.notInclude(output, "Netherlands") === undefined;'
+  }, {
+    name: '\'Sweden\' isn\'t in array',
+    test: 'assert.notInclude(output, "Sweden") === undefined;'
+  }]
+}, {
+  name: 'Array.splice() shallow copy array',
+  time: 30,
+  prompt: 'Shallow copy the \'countries\' array using \'Array.splice()\', then return the new copy',
+  given: 'const countries = [\'Maldives\',\'New Zealand\',\'Austria\',\'Palau\'];\n          const clone =\n          return clone',
+  answer: 'const countries = [\'Maldives\',\'New Zealand\',\'Austria\',\'Palau\'];\n           const clone = countries.splice(0);\n           return clone;',
+  tests: [{
+    name: 'Correct output',
+    test: 'assert.deepEqual(output, [\'Maldives\',\'New Zealand\',\'Austria\',\'Palau\']) === undefined;'
+  }, {
+    name: 'Returns an Array',
+    test: 'assert.isArray(output) === undefined;'
+  }, {
+    name: 'Array has 4 items',
+    test: 'assert.lengthOf(output, 4) === undefined;'
+  }, {
+    name: 'First item is \'Maldives\'',
+    test: 'assert.deepEqual(output[0], \'Maldives\') === undefined;'
+  }, {
+    name: 'Last item is \'Palau\'',
+    test: 'assert.deepEqual(output[output.length - 1], \'Palau\') === undefined;'
   }]
 }];
 
 // Next problems to create:
-// splice 1, 2 items, shallow copy array
 // get array's length
 // push several items
 // decrease length to truncate array, deleting elements
