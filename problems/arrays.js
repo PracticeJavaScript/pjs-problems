@@ -1,7 +1,6 @@
 'use strict';
 
-module.exports = [
-  {
+module.exports = [{
   name: 'Access Array by index (first)',
   time: 10,
   prompt: 'Return the first value of the Array',
@@ -646,14 +645,11 @@ module.exports = [
     name: 'Last item is \'lion\'',
     test: 'assert.deepEqual(output[output.length - 1], \'lion\') === undefined;'
   }]
-},
-{
+}, {
   name: 'Array.splice() remove 1, insert 0',
   time: 30,
   prompt: 'Rescue \'bunny\' away from his new friends \'dingo\' and \'panther\' using Array.splice(), then return \'animals\'',
-  given: `const animals = [\'eagle\', \'dingo\', \'bunny\', \'panther\', \'lion\'];
-
-          return animals`,
+  given: 'const animals = [\'eagle\', \'dingo\', \'bunny\', \'panther\', \'lion\'];\n\n          return animals',
   answer: 'const animals = [\'eagle\', \'dingo\', \'bunny\', \'panther\', \'lion\'];\n           animals.splice(2, 1);\n           return animals;',
   tests: [{
     name: 'Correct output',
@@ -677,17 +673,12 @@ module.exports = [
     name: 'Bunny isn\'t in array',
     test: 'assert.notInclude(output, "bunny") === undefined;'
   }]
-},
-{
+}, {
   name: 'Array.splice() remove 2',
   time: 30,
-  prompt: `Rescue 'gerbil' and 'bunny' from 'animals' using Array.splice(), then return \'animals\'`,
-  given: `const animals = ["eagle", "dingo", "bunny", "gerbil", "panther", "lion"];
-
-          return animals;`,
-  answer: `const animals = ["eagle", "dingo", "bunny", "gerbil", "panther", "lion"];
-           animals.splice(2,2);
-           return animals;`,
+  prompt: 'Rescue \'gerbil\' and \'bunny\' from \'animals\' using Array.splice(), then return \'animals\'',
+  given: 'const animals = ["eagle", "dingo", "bunny", "gerbil", "panther", "lion"];\n\n          return animals;',
+  answer: 'const animals = ["eagle", "dingo", "bunny", "gerbil", "panther", "lion"];\n           animals.splice(2,2);\n           return animals;',
   tests: [{
     name: 'Correct output',
     test: 'assert.deepEqual(output, [\'eagle\', \'dingo\', \'panther\', \'lion\']) === undefined;'
@@ -707,28 +698,21 @@ module.exports = [
     name: 'Last item is \'lion\'',
     test: 'assert.deepEqual(output[output.length - 1], \'lion\') === undefined;'
   }, {
-    name: `'bunny' isn\'t in array`,
+    name: '\'bunny\' isn\'t in array',
     test: 'assert.notInclude(output, "bunny") === undefined;'
   }, {
     name: '\'gerbil\' isn\'t in array',
     test: 'assert.notInclude(output, "gerbil") === undefined;'
   }]
-},
-{
+}, {
   name: 'Array.splice() remove 2, add 2',
   time: 30,
-  prompt: `Remove the boring 'alpaca' and 'bunny' from 'carnivores' and add 't-rex' and 'velociraptor' the the beginning of the array using one Array.splice(), then return \'carnivores\' so they can have an awesome carnivore-party`,
-  given: `const carnivores = [ 'alpaca', 'bunny', 'alligator', 'wolverine'];
-          const dinos = ['t-rex', 'velociraptor'];
-
-          return carnivores;`,
-  answer: `const carnivores = [ 'alpaca', 'bunny', 'alligator', 'wolverine'];
-           const dinos = ['t-rex', 'velociraptor'];
-           carnivores.splice(0, 2, ...dinos);
-           return carnivores;`,
+  prompt: 'Remove the boring \'alpaca\' and \'bunny\' from \'carnivores\' and add \'t-rex\' and \'velociraptor\' the the beginning of the array using one Array.splice(), then return \'carnivores\' so they can have an awesome carnivore-party',
+  given: 'const carnivores = [ \'alpaca\', \'bunny\', \'alligator\', \'wolverine\'];\n          const dinos = [\'t-rex\', \'velociraptor\'];\n\n          return carnivores;',
+  answer: 'const carnivores = [ \'alpaca\', \'bunny\', \'alligator\', \'wolverine\'];\n           const dinos = [\'t-rex\', \'velociraptor\'];\n           carnivores.splice(0, 2, ...dinos);\n           return carnivores;',
   tests: [{
     name: 'Correct output',
-    test: `assert.deepEqual(output, ["t-rex", "velociraptor", "alligator", "wolverine"]) === undefined;`
+    test: 'assert.deepEqual(output, ["t-rex", "velociraptor", "alligator", "wolverine"]) === undefined;'
   }, {
     name: 'Returns an Array',
     test: 'assert.isArray(output) === undefined;'
@@ -751,20 +735,15 @@ module.exports = [
     name: '\'alpaca\' isn\'t in array',
     test: 'assert.notInclude(output, "alpaca") === undefined;'
   }]
-},
-{
+}, {
   name: 'Array.splice() remove last 2',
   time: 30,
-  prompt: `Remove the last two items from 'countries' using 'Array.splice()', then return 'countries'`,
-  given: `const countries = ['Maldives','New Zealand','Austria','Palau'];
-
-          return countries;`,
-  answer: `const countries = ['Maldives','New Zealand','Austria','Palau'];
-           countries.splice(-2);
-           return countries;`,
+  prompt: 'Remove the last two items from \'countries\' using \'Array.splice()\', then return \'countries\'',
+  given: 'const countries = [\'Maldives\',\'New Zealand\',\'Austria\',\'Palau\'];\n\n          return countries;',
+  answer: 'const countries = [\'Maldives\',\'New Zealand\',\'Austria\',\'Palau\'];\n           countries.splice(-2);\n           return countries;',
   tests: [{
     name: 'Correct output',
-    test: `assert.deepEqual(output, ["Maldives", "New Zealand"]) === undefined;`
+    test: 'assert.deepEqual(output, ["Maldives", "New Zealand"]) === undefined;'
   }, {
     name: 'Returns an Array',
     test: 'assert.isArray(output) === undefined;'
@@ -784,20 +763,15 @@ module.exports = [
     name: '\'Palau\' isn\'t in array',
     test: 'assert.notInclude(output, "Palau") === undefined;'
   }]
-},
-{
+}, {
   name: 'Array.splice() remove all after index',
   time: 30,
-  prompt: `Remove all items after index '2' from 'countries' using 'Array.splice()', then return 'countries'`,
-  given: `const countries = ['Maldives','New Zealand','Austria','Palau','Netherlands','Sweden'];
-
-          return countries;`,
-  answer: `const countries = ['Maldives','New Zealand','Austria','Palau','Netherlands','Sweden'];
-           countries.splice(2);
-           return countries;`,
+  prompt: 'Remove all items after index \'2\' from \'countries\' using \'Array.splice()\', then return \'countries\'',
+  given: 'const countries = [\'Maldives\',\'New Zealand\',\'Austria\',\'Palau\',\'Netherlands\',\'Sweden\'];\n\n          return countries;',
+  answer: 'const countries = [\'Maldives\',\'New Zealand\',\'Austria\',\'Palau\',\'Netherlands\',\'Sweden\'];\n           countries.splice(2);\n           return countries;',
   tests: [{
     name: 'Correct output',
-    test: `assert.deepEqual(output, ["Maldives", "New Zealand"]) === undefined;`
+    test: 'assert.deepEqual(output, ["Maldives", "New Zealand"]) === undefined;'
   }, {
     name: 'Returns an Array',
     test: 'assert.isArray(output) === undefined;'
@@ -822,22 +796,16 @@ module.exports = [
   }, {
     name: '\'Sweden\' isn\'t in array',
     test: 'assert.notInclude(output, "Sweden") === undefined;'
-  }
-  ]
-},
-{
+  }]
+}, {
   name: 'Array.splice() shallow copy array',
   time: 30,
-  prompt: `Shallow copy the 'countries' array using 'Array.splice()', then return the new copy`,
-  given: `const countries = ['Maldives','New Zealand','Austria','Palau'];
-          const clone =
-          return clone`,
-  answer: `const countries = ['Maldives','New Zealand','Austria','Palau'];
-           const clone = countries.splice(0);
-           return clone;`,
+  prompt: 'Shallow copy the \'countries\' array using \'Array.splice()\', then return the new copy',
+  given: 'const countries = [\'Maldives\',\'New Zealand\',\'Austria\',\'Palau\'];\n          const clone =\n          return clone',
+  answer: 'const countries = [\'Maldives\',\'New Zealand\',\'Austria\',\'Palau\'];\n           const clone = countries.splice(0);\n           return clone;',
   tests: [{
     name: 'Correct output',
-    test: `assert.deepEqual(output, ['Maldives','New Zealand','Austria','Palau']) === undefined;`
+    test: 'assert.deepEqual(output, [\'Maldives\',\'New Zealand\',\'Austria\',\'Palau\']) === undefined;'
   }, {
     name: 'Returns an Array',
     test: 'assert.isArray(output) === undefined;'
@@ -850,13 +818,10 @@ module.exports = [
   }, {
     name: 'Last item is \'Palau\'',
     test: 'assert.deepEqual(output[output.length - 1], \'Palau\') === undefined;'
-  }
-  ]
-}
-];
+  }]
+}];
 
 // Next problems to create:
-// splice 1, 2 items, shallow copy array
 // get array's length
 // push several items
 // decrease length to truncate array, deleting elements
