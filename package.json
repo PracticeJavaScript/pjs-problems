@@ -5,10 +5,13 @@
   "main": "index.js",
   "repository": "practicejavascript/pjs-problems",
   "scripts": {
+    "test": "./node_modules/.bin/jest",
     "build": "./node_modules/.bin/gulp es5",
     "precommit": "npm run build",
-    "prepush": "npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepush": "npm run build"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "author": "Jakob Anderson <@spacerockzero>",
   "license": "MIT",
@@ -17,6 +20,8 @@
     "babel-preset-env": "^1.5.1",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
-    "husky": "^0.13.4"
+    "husky": "^0.13.4",
+    "is": "^3.2.1",
+    "jest-cli": "^20.0.4"
   }
 }
