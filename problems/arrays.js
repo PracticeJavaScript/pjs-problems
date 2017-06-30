@@ -3,6 +3,7 @@
 module.exports = [{
   name: 'Access Array by index (first)',
   time: 10,
+  label: 'es5',
   prompt: 'Return the first value of the Array',
   given: 'const fruits = [\'apple\', \'banana\'];\r',
   answer: 'const fruits = [\'apple\', \'banana\'];\n             return fruits[0];',
@@ -16,6 +17,7 @@ module.exports = [{
 }, {
   name: 'Access Array by index (first)',
   time: 10,
+  label: 'es5',
   prompt: 'Return the first value of the Array',
   given: 'const animals = [\'chipmunk\', \'chimpanzee\'];\n           ',
   answer: 'const animals = [\'chipmunk\', \'chimpanzee\'];\n             return animals[0];',
@@ -29,6 +31,7 @@ module.exports = [{
 }, {
   name: 'Access Array by index (last)',
   time: 10,
+  label: 'es5',
   prompt: 'Return the last value of the Array',
   given: 'const fruits = [\'apple\', \'banana\', \'orange\'];\r',
   answer: 'const fruits = [\'apple\', \'banana\', \'orange\'];\n             return fruits[fruits.length - 1];',
@@ -42,6 +45,7 @@ module.exports = [{
 }, {
   name: 'Access Array by index (last)',
   time: 10,
+  label: 'es5',
   prompt: 'Return the last value of the Array',
   given: 'const animals = [\'dog\', \'hamster\', \'lion\'];\n           ',
   answer: 'const animals = [\'dog\', \'hamster\', \'lion\'];\n             return animals[animals.length - 1];',
@@ -55,6 +59,7 @@ module.exports = [{
 }, {
   name: 'Access Array by index (second)',
   time: 10,
+  label: 'es5',
   prompt: 'Return the second value of the Array',
   given: 'const fruits = [\'apple\', \'banana\'];\r',
   answer: 'const fruits = [\'apple\', \'banana\'];\n             return fruits[1];',
@@ -68,6 +73,7 @@ module.exports = [{
 }, {
   name: 'Access Array by index (second)',
   time: 10,
+  label: 'es5',
   prompt: 'Return the second value of the Array',
   given: 'const animals = [\'kitten\', \'monkey\'];\n           ',
   answer: 'const animals = [\'kitten\', \'monkey\'];\n             return animals[1];',
@@ -81,6 +87,7 @@ module.exports = [{
 }, {
   name: 'Array.forEach()',
   time: 20,
+  label: 'es5',
   prompt: 'Iterate through the array, add an \'x\' to the end of each fruit, return the array.',
   given: 'const fruits = [\'apple\', \'banana\'];\r',
   answer: 'const fruits = [\'apple\', \'banana\'];\n             const newFruits = [];\n             fruits.forEach(function(item) {\n               newFruits.push(item+\'x\');\n             });\n             return newFruits;',
@@ -97,6 +104,7 @@ module.exports = [{
 }, {
   name: 'Array.forEach()',
   time: 20,
+  label: 'es5',
   prompt: 'Iterate through the array, add a \'ty\' to the end of each animal, return the array.',
   given: 'const animals = [\'parrot\', \'bat\'];\n           ',
   answer: 'const animals = [\'parrot\', \'bat\'];\n             const newAnimals = [];\n             animals.forEach(function(item) {\n               newAnimals.push(item+\'ty\');\n             });\n             return newAnimals;',
@@ -113,6 +121,7 @@ module.exports = [{
 }, {
   name: 'Array.push()',
   time: 10,
+  label: 'es5',
   prompt: 'Add \'orange\' to the end of the \'fruits\' array and return \'fruits\'.',
   given: 'const fruits = [\'apple\', \'banana\'];\r',
   answer: 'const fruits = [\'apple\', \'banana\'];\n             fruits.push(\'orange\');\n             return fruits;',
@@ -129,6 +138,7 @@ module.exports = [{
 }, {
   name: 'Array.push()',
   time: 10,
+  label: 'es5',
   prompt: 'Add \'sloth\' to the end of the \'animals\' array and return \'animals\'.',
   given: 'const animals = [\'crow\', \'ox\'];\r',
   answer: 'const animals = [\'crow\', \'ox\'];\n             animals.push(\'sloth\');\n             return animals;',
@@ -145,6 +155,7 @@ module.exports = [{
 }, {
   name: 'Array.shift()',
   time: 10,
+  label: 'es5',
   prompt: 'Remove \'apple\' from the front of the \'fruits\' array and return \'fruits\'.',
   given: 'const fruits = [\'apple\', \'banana\', \'orange\'];\r',
   answer: 'const fruits = [\'apple\', \'banana\', \'orange\'];\n             fruits.shift();\n             return fruits;',
@@ -161,6 +172,7 @@ module.exports = [{
 }, {
   name: 'Array.shift()',
   time: 10,
+  label: 'es5',
   prompt: 'Remove \'lemur\' from the front of the \'animals\' array and return \'animals\'.',
   given: 'const animals = [\'lemur\', \'crocodile\', \'cat\'];\r',
   answer: 'const animals = [\'lemur\', \'crocodile\', \'cat\'];\n             animals.shift();\n             return animals;',
@@ -177,6 +189,7 @@ module.exports = [{
 }, {
   name: 'Array.unshift()',
   time: 10,
+  label: 'es5',
   prompt: 'Add \'strawberry\' to the front of the \'fruits\' array and return \'fruits\'.',
   given: 'const fruits = [\'apple\', \'banana\', \'orange\'];\r',
   answer: 'const fruits = [\'apple\', \'banana\', \'orange\'];\n             fruits.unshift(\'strawberry\');\n             return fruits;',
@@ -193,6 +206,7 @@ module.exports = [{
 }, {
   name: 'Array.unshift()',
   time: 10,
+  label: 'es5',
   prompt: 'Add \'octopus\' to the front of the \'animals\' array and return \'animals\'.',
   given: 'const animals = [\'pig\', \'colt\', \'antelope\'];\r',
   answer: 'const animals = [\'pig\', \'colt\', \'antelope\'];\n             animals.unshift(\'octopus\');\n             return animals;',
@@ -209,6 +223,7 @@ module.exports = [{
 }, {
   name: 'Array.indexOf()',
   time: 10,
+  label: 'es5',
   prompt: 'Return the index of \'banana\' in the Array.',
   given: 'const fruits = [\'strawberry\', \'banana\', \'mango\'];\r',
   answer: 'const fruits = [\'strawberry\', \'banana\', \'mango\'];\n             const ind = fruits.indexOf(\'banana\');\n             return ind;',
@@ -222,6 +237,7 @@ module.exports = [{
 }, {
   name: 'Array.indexOf()',
   time: 10,
+  label: 'es5',
   prompt: 'Return the index of \'fox\' in the Array.',
   given: 'const animals = [\'kangaroo\', \'fox\', \'bison\'];\r',
   answer: 'const animals = [\'kangaroo\', \'fox\', \'bison\'];\n             const ind = animals.indexOf(\'fox\');\n             return ind;',
@@ -235,6 +251,7 @@ module.exports = [{
 }, {
   name: 'Array.concat()',
   time: 10,
+  label: 'es5',
   prompt: 'Merge the two arrays using Array\'s \'concat()\' method. Return the resulting array.',
   given: 'const fruits = [\'strawberry\', \'banana\'];\rconst otherFruits = [\'pear\',\'peach\'];\r',
   answer: 'const fruits = [\'strawberry\', \'banana\'];\n            const otherFruits = [\'pear\',\'peach\'];\n            const allTheFruits = fruits.concat(otherFruits);\n            return allTheFruits;\r',
@@ -251,6 +268,7 @@ module.exports = [{
 }, {
   name: 'Array.concat()',
   time: 10,
+  label: 'es6',
   prompt: 'Merge the two arrays using Array\'s \'concat()\' method. Return the resulting array.',
   given: 'const adjectives = [\'giant\', \'chunky\'];\n            const verbs = [\'turn\',\'whisper\'];\n            ',
   answer: 'const adjectives = [\'giant\', \'chunky\'];\n             const verbs = [\'turn\',\'whisper\'];\n             const words = adjectives.concat(verbs);\n             return words;',
@@ -267,6 +285,7 @@ module.exports = [{
 }, {
   name: 'Array.join()',
   time: 10,
+  label: 'es5',
   prompt: 'Mix the two flavors with a \'-\' using Array\'s \'join\' method. Return the resulting hybrid flavor.',
   given: 'const fruits = [\'strawberry\', \'banana\'];\r',
   answer: 'const fruits = [\'strawberry\', \'banana\'];\n             const hybrid = fruits.join(\'-\');\n             return hybrid;\r',
@@ -280,6 +299,7 @@ module.exports = [{
 }, {
   name: 'Array.join()',
   time: 10,
+  label: 'es5',
   prompt: 'Mix the two animals with a \'-\' using Array\'s \'join\' method. Return the resulting hybrid animal.',
   given: 'const animals = [\'alligator\', \'deer\'];\r',
   answer: 'const animals = [\'alligator\', \'deer\'];\n             const hybrid = animals.join(\'-\');\n             return hybrid;\r',
@@ -293,6 +313,7 @@ module.exports = [{
 }, {
   name: 'Array.slice()',
   time: 20,
+  label: 'es5',
   prompt: 'Return just the citrus fruits from the \'fruits\' array using \'Array.slice()\'',
   given: 'const fruits = [\'strawberry\', \'orange\', \'lemon\', \'banana\'];\r',
   answer: 'const fruits = [\'strawberry\', \'orange\', \'lemon\', \'banana\'];\n             const citrus = fruits.slice(1, 3);\n             return citrus;',
@@ -309,6 +330,7 @@ module.exports = [{
 }, {
   name: 'Array.slice()',
   time: 20,
+  label: 'es5',
   prompt: 'Return just the birds from the \'animals\' array using \'Array.slice()\'',
   given: 'const animals = [\'hyena\', \'koala\', \'parrot\', \'canary\'];\n           ',
   answer: 'const animals = [\'hyena\', \'koala\', \'parrot\', \'canary\'];\n             const birds = animals.slice(2, 4);\n             return birds;',
@@ -325,6 +347,7 @@ module.exports = [{
 }, {
   name: 'Array.reverse()',
   time: 10,
+  label: 'es5',
   prompt: 'Reverse the order of the \'fruit\' array using \'Array.reverse()\'',
   given: 'const fruits = [\'strawberry\', \'orange\', \'lemon\', \'banana\'];\r',
   answer: 'const fruits = [\'strawberry\', \'orange\', \'lemon\', \'banana\'];\n             const stiurf = fruits.reverse();\n             return stiurf;',
@@ -344,6 +367,7 @@ module.exports = [{
 }, {
   name: 'Array.reverse()',
   time: 10,
+  label: 'es5',
   prompt: 'Reverse the order of the \'animals\' array using \'Array.reverse()\'',
   given: 'const animals = [\'mongoose\', \'warthog\', \'elk\', \'baboon\'];\r',
   answer: 'const animals = [\'mongoose\', \'warthog\', \'elk\', \'baboon\'];\n             return animals.reverse();',
@@ -363,6 +387,7 @@ module.exports = [{
 }, {
   name: 'Array.sort()',
   time: 10,
+  label: 'es5',
   prompt: 'Return the \'fruits\' Array after sorting them using \'Array.sort()\'.',
   given: 'const fruits = [\'strawberry\', \'orange\', \'lemon\', \'banana\'];\r',
   answer: 'const fruits = [\'strawberry\', \'orange\', \'lemon\', \'banana\'];\n             const orderlyFruit = fruits.sort();\n             return orderlyFruit;',
@@ -382,6 +407,7 @@ module.exports = [{
 }, {
   name: 'Array.sort()',
   time: 10,
+  label: 'es5',
   prompt: 'Return the \'animals\' Array after sorting them using \'Array.sort()\'.',
   given: 'const animals = [\'pig\', \'duck\', \'sheep\', \'cow\'];\r',
   answer: 'const animals = [\'pig\', \'duck\', \'sheep\', \'cow\'];\n             return animals.sort();',
@@ -401,6 +427,7 @@ module.exports = [{
 }, {
   name: 'Array.lastIndexOf()',
   time: 10,
+  label: 'es5',
   prompt: 'Return the index of the last \'peach\' instance in the \'fruit\' array using \'Array.lastIndexOf()\'',
   given: 'const fruits = [\'peach\', \'orange\', \'lemon\', \'peach\'];\r',
   answer: 'const fruits = [\'peach\', \'orange\', \'lemon\', \'peach\'];\n             const wheresTheLastPeach = fruits.lastIndexOf(\'peach\');\n             return wheresTheLastPeach;',
@@ -414,6 +441,7 @@ module.exports = [{
 }, {
   name: 'Array.lastIndexOf()',
   time: 10,
+  label: 'es5',
   prompt: 'Return the index of the last \'lynx\' instance in the \'animals\' array using \'Array.lastIndexOf()\'',
   given: 'const animals = [\'lynx\', \'rabbit\', \'lynx\', \'wombat\'];\r',
   answer: 'const animals = [\'lynx\', \'rabbit\', \'lynx\', \'wombat\'];\n             return animals.lastIndexOf(\'lynx\');',
@@ -427,6 +455,7 @@ module.exports = [{
 }, {
   name: 'Array.filter()',
   time: 10,
+  label: 'es5',
   prompt: 'Return an array of the numbers greater than 5 in \'numbers\' using \'Array.filter()\'',
   given: 'const numbers = [1, 1, 2, 3, 5, 8, 13, 21];\r',
   answer: 'const numbers = [1, 1, 2, 3, 5, 8, 13, 21];\n             const overFive = numbers.filter(num => num > 5);\n             return overFive;',
@@ -446,6 +475,7 @@ module.exports = [{
 }, {
   name: 'Array.filter()',
   time: 10,
+  label: 'es5',
   prompt: 'Return an array of the numbers less than 12 or greater than 20 in \'numbers\' using \'Array.filter()\'',
   given: 'const numbers = [12, 10, 20, 3, 15, 8, 130, 25];\n           ',
   answer: 'const numbers = [12, 10, 20, 3, 15, 8, 130, 25];\n             return numbers.filter(num => (num < 12 || num > 20));',
@@ -465,6 +495,7 @@ module.exports = [{
 }, {
   name: 'Array.map()',
   time: 10,
+  label: 'es5',
   prompt: 'Return an array of \'numbers\' array\'s square roots, using \'Array.map()\' and \'Math.sqrt()\'',
   given: 'const numbers = [25, 121, 169];\r',
   answer: 'const numbers = [25, 121, 169];\n             const roots = numbers.map(num => Math.sqrt(num));\n             return roots;',
@@ -487,6 +518,7 @@ module.exports = [{
 }, {
   name: 'Array.map()',
   time: 10,
+  label: 'es5',
   prompt: 'Return an array of \'numbers\' array\'s numbers squared using \'Array.map()\'',
   given: 'const numbers = [8, 21, 32, 11];\n           ',
   answer: 'const numbers = [8, 21, 32, 11];\n             return numbers.map(num => num * num));',
@@ -509,6 +541,7 @@ module.exports = [{
 }, {
   name: 'Array.every()',
   time: 10,
+  label: 'es6',
   prompt: 'Return object that returns whether each array contains all even numbers using Array.every().',
   given: 'const evenNumbers = [2, 4, 6, 8];\n            const someOddNumbers = [2, 5, 6, 8];\n            function isEven(num) {\n\n            }\n            return {\n              evenNumbers: evenNumbers.,\n              someOddNumbers: someOddNumbers.\n            };',
   answer: 'const evenNumbers = [2, 4, 6, 8];\n             const someOddNumbers = [2, 5, 6, 8];\n             function isEven(num) {\n               return num % 2 === 0\n             }\n             return {\n               evenNumbers: evenNumbers.every(isEven),\n               someOddNumbers: someOddNumbers.every(isEven)\n             };',
@@ -531,6 +564,7 @@ module.exports = [{
 }, {
   name: 'Array.some()',
   time: 10,
+  label: 'es6',
   prompt: 'Return \'Object\' that returns whether each array contains some odd numbers using \'Array.some()\'.',
   given: 'const evenNumbers = [2, 4, 6, 8];\n            const someOddNumbers = [2, 4, 7, 8];\n            function isOdd(num) {\n\n            }\n            return {\n              evenNumbers: evenNumbers.,\n              someOddNumbers: someOddNumbers.\n            };',
   answer: 'const evenNumbers = [1, 3, 5, 7];\n             const someOddNumbers = [1, 3, 6, 7];\n             function isOdd(num) {\n               return num % 2 !== 0;\n             }\n             return {\n               evenNumbers: evenNumbers.some(isOdd),\n               someOddNumbers: someOddNumbers.some(isOdd)\n             };',
@@ -553,6 +587,7 @@ module.exports = [{
 }, {
   name: 'Array.reduce()',
   time: 10,
+  label: 'es6',
   prompt: 'Return the sum of the values in the \'numbers\' array using \'Array.reduce()\'',
   given: 'const numbers = [34, 12, 47, 112];\n           ',
   answer: 'const numbers = [34, 12, 47, 112];\n             return numbers.reduce((accumulator, currentValue) => {\n               return accumulator + currentValue;\n             } 0);',
@@ -566,6 +601,7 @@ module.exports = [{
 }, {
   name: 'Array.reduce() and Array.concat()',
   time: 40,
+  label: 'es6',
   prompt: 'Return a flattened array using \'Array.reduce() and Array.concat()\'',
   given: 'const numbers = [[51, 2], [23, 5, 6], 78];\n           ',
   answer: 'const numbers = [[51, 2], [23, 5, 6], 78];\n             const flatten = arr => arr.reduce(\n               (acc, val) => acc.concat(\n                 Array.isArray(val) ? flatten(val) : val\n               ),\n               []\n             );\n             return flatten(numbers)',
@@ -588,6 +624,7 @@ module.exports = [{
 }, {
   name: 'Array.reduce() and Math.max()',
   time: 40,
+  label: 'es6',
   prompt: 'Return the highest number in the array using Array.reduce() and Math.max()',
   given: 'const numbers = [4, 12, 3, 15, 7];',
   answer: 'const numbers = [4, 12, 3, 15, 7];\n           return numbers.reduce((max, current) => Math.max( max, current ));',
@@ -601,6 +638,7 @@ module.exports = [{
 }, {
   name: 'Array.reduceRight()',
   time: 30,
+  label: 'es6',
   prompt: 'Flatten an array of arrays from right to left, using Array.reduceRight()',
   given: 'const numbers = [[0, 1], [2, 3], [4, 5]];\n          ',
   answer: 'const numbers = [[0, 1], [2, 3], [4, 5]];\n           return numbers.reduceRight((prev, curr) => prev.concat(curr));',
@@ -623,6 +661,7 @@ module.exports = [{
 }, {
   name: 'Array.splice() remove 0, insert 1',
   time: 30,
+  label: 'es5',
   prompt: 'Splice \'bunny\' between his new friends \'dingo\' and \'panther\' using Array.splice(), then return \'animals\'',
   given: 'const animals = [\'eagle\', \'dingo\', \'panther\', \'lion\'];\n          ',
   answer: 'const animals = [\'eagle\', \'dingo\', \'panther\', \'lion\'];\n           animals.splice(2, 0, \'bunny\');\n           return animals;',
@@ -648,6 +687,7 @@ module.exports = [{
 }, {
   name: 'Array.splice() remove 1, insert 0',
   time: 30,
+  label: 'es5',
   prompt: 'Rescue \'bunny\' away from his new friends \'dingo\' and \'panther\' using Array.splice(), then return \'animals\'',
   given: 'const animals = [\'eagle\', \'dingo\', \'bunny\', \'panther\', \'lion\'];\n\n          return animals',
   answer: 'const animals = [\'eagle\', \'dingo\', \'bunny\', \'panther\', \'lion\'];\n           animals.splice(2, 1);\n           return animals;',
@@ -676,6 +716,7 @@ module.exports = [{
 }, {
   name: 'Array.splice() remove 2',
   time: 30,
+  label: 'es5',
   prompt: 'Rescue \'gerbil\' and \'bunny\' from \'animals\' using Array.splice(), then return \'animals\'',
   given: 'const animals = ["eagle", "dingo", "bunny", "gerbil", "panther", "lion"];\n\n          return animals;',
   answer: 'const animals = ["eagle", "dingo", "bunny", "gerbil", "panther", "lion"];\n           animals.splice(2,2);\n           return animals;',
@@ -707,6 +748,7 @@ module.exports = [{
 }, {
   name: 'Array.splice() remove 2, add 2',
   time: 30,
+  label: 'es5',
   prompt: 'Remove the boring \'alpaca\' and \'bunny\' from \'carnivores\' and add \'t-rex\' and \'velociraptor\' the the beginning of the array using one Array.splice(), then return \'carnivores\' so they can have an awesome carnivore-party',
   given: 'const carnivores = [ \'alpaca\', \'bunny\', \'alligator\', \'wolverine\'];\n          const dinos = [\'t-rex\', \'velociraptor\'];\n\n          return carnivores;',
   answer: 'const carnivores = [ \'alpaca\', \'bunny\', \'alligator\', \'wolverine\'];\n           const dinos = [\'t-rex\', \'velociraptor\'];\n           carnivores.splice(0, 2, ...dinos);\n           return carnivores;',
@@ -738,6 +780,7 @@ module.exports = [{
 }, {
   name: 'Array.splice() remove last 2',
   time: 30,
+  label: 'es5',
   prompt: 'Remove the last two items from \'countries\' using \'Array.splice()\', then return \'countries\'',
   given: 'const countries = [\'Maldives\',\'New Zealand\',\'Austria\',\'Palau\'];\n\n          return countries;',
   answer: 'const countries = [\'Maldives\',\'New Zealand\',\'Austria\',\'Palau\'];\n           countries.splice(-2);\n           return countries;',
@@ -766,6 +809,7 @@ module.exports = [{
 }, {
   name: 'Array.splice() remove all after index',
   time: 30,
+  label: 'es5',
   prompt: 'Remove all items after index \'2\' from \'countries\' using \'Array.splice()\', then return \'countries\'',
   given: 'const countries = [\'Maldives\',\'New Zealand\',\'Austria\',\'Palau\',\'Netherlands\',\'Sweden\'];\n\n          return countries;',
   answer: 'const countries = [\'Maldives\',\'New Zealand\',\'Austria\',\'Palau\',\'Netherlands\',\'Sweden\'];\n           countries.splice(2);\n           return countries;',
@@ -800,6 +844,7 @@ module.exports = [{
 }, {
   name: 'Array.splice() shallow copy array',
   time: 30,
+  label: 'es5',
   prompt: 'Shallow copy the \'countries\' array using \'Array.splice()\', then return the new copy',
   given: 'const countries = [\'Maldives\',\'New Zealand\',\'Austria\',\'Palau\'];\n          const clone =\n          return clone',
   answer: 'const countries = [\'Maldives\',\'New Zealand\',\'Austria\',\'Palau\'];\n           const clone = countries.splice(0);\n           return clone;',
