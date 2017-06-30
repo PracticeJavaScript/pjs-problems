@@ -50,17 +50,9 @@ module.exports = [
 {
   name: 'Map.delete()',
   time: 10,
-  prompt: `Remove 'Steve' from 'players' using '.delete()'`,
-  given: `const players = new Map();
-          players.set('Steve', 'foo');
-          players.set('Geoff', 'foo'});
-
-          return players;`,
-  answer: `const players = new Map();
-           players.set('Steve', 'foo');
-           players.set('Geoff', 'foo');
-           players.delete('Steve');
-           return players;`,
+  prompt: 'Remove \'Steve\' from \'players\' using \'.delete()\'',
+  given: 'const players = new Map();\n          players.set(\'Steve\', \'foo\');\n          players.set(\'Geoff\', \'foo\'});\n\n          return players;',
+  answer: 'const players = new Map();\n           players.set(\'Steve\', \'foo\');\n           players.set(\'Geoff\', \'foo\');\n           players.delete(\'Steve\');\n           return players;',
   tests: [{
     name: 'Returns a Map',
     test: 'assert.equal(output instanceof Map, true, "Should return a type Map") === undefined;'
@@ -69,42 +61,41 @@ module.exports = [
     test: 'assert.equal(output.size, 1, "Map.size should be 1") === undefined;'
   }, {
     name: 'Map has player Geoff',
-    test: `assert.equal(output.has('Geoff'), true, "Map should still have Geoff") === undefined;`
+    test: 'assert.equal(output.has(\'Geoff\'), true, "Map should still have Geoff") === undefined;'
   }]
-}
-// .delete()
-// .entries()
-// .forEach()
-// .get()
-// .has()
-// .keys()
-// .set()
-// .values()
-// iterating with for..of
-// convert keys to array?
+  // .delete()
+  // .entries()
+  // .forEach()
+  // .get()
+  // .has()
+  // .keys()
+  // .set()
+  // .values()
+  // iterating with for..of
+  // convert keys to array?
 
 
-// WeakMap()
+  // WeakMap()
 
 
-// Set()
-// .length // 0
-// .size()
-// .add()
-// .clear()
-// .delete()
-// .entries()
-// .forEach()
-// .has()
-// .keys()
-// .values()
-// store a de-duped list of names using Set
-// transform an array into a set
-// superset
-// union
-// intersection
-// difference
+  // Set()
+  // .length // 0
+  // .size()
+  // .add()
+  // .clear()
+  // .delete()
+  // .entries()
+  // .forEach()
+  // .has()
+  // .keys()
+  // .values()
+  // store a de-duped list of names using Set
+  // transform an array into a set
+  // superset
+  // union
+  // intersection
+  // difference
 
-// WeakSet()
+  // WeakSet()
 
-];
+}];
